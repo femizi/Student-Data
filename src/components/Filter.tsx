@@ -1,13 +1,31 @@
+import { Key } from "react"
 import { useQuery } from "react-query"
-
+import MenuOptions from './MenuOptions'
 
 const Filter = () => {
     const ages = useQuery('ages', () =>
-  fetch('https://testapiomniswift.herokuapp.com/api/viewAllAges').then(res =>
-  res.json()
-  
-  ))
-  console.log(ages)
+        fetch('https://testapiomniswift.herokuapp.com/api/viewAllAges').then(res =>
+            res.json()
+
+        ))
+    const states = useQuery('states', () =>
+        fetch('https://testapiomniswift.herokuapp.com/api/viewAllStates').then(res =>
+            res.json()
+
+        ))
+    const levels = useQuery('levels', () =>
+        fetch('https://testapiomniswift.herokuapp.com/api/viewAllLevels').then(res =>
+            res.json()
+
+        ))
+    //   wrong documentation
+    const gender = useQuery('gender', () =>
+        fetch('https://testapiomniswift.herokuapp.com/api/viewAllGender').then(res =>
+            res.json()
+
+        ))
+
+    console.log(states)
     return (
         <div className="filter-container bg-white px-7 py-8">
             <h2 className='text-left text-[#616161] text-2xl mb-8'>Filter Student Table By:</h2>
@@ -25,11 +43,11 @@ const Filter = () => {
                         </div>
 
 
-                        <div className="  origin-top-right absolute z-10 right-0 border mt-2 w-56 rounded-md w-full shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex={-1}>
+                        <div className="group-focus-within:visible invisible  origin-top-right absolute z-10 right-0 border mt-2  rounded-md w-full shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex={-1}>
                             <div className="py-1" role="none">
                                 {/* <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" --> */}
-                                <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabIndex={-1} id="menu-item-0">Account settings</a>
-
+                                {/* check if ages.isloading is true check if ages.iserror is true then map ages.data */}
+                                {ages.isLoading ? <div>Loading...</div> : ages.isError ? <div>Error</div> : ages.data.data.map(age => <MenuOptions item={age} key={age.id} />)}
                             </div>
                         </div>
                         <div className="absolute  font-medium bg-white left-4 -top-3 px-2 ">Age</div>
@@ -37,7 +55,7 @@ const Filter = () => {
 
                 </div>
                 <div>
-                    <div className="relative inline-block text-left w-full">
+                    <div className="group relative inline-block text-left w-full">
                         <div>
                             <button type="button" className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-10 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="menu-button" aria-expanded="true" aria-haspopup="true">
                                 select state
@@ -48,10 +66,10 @@ const Filter = () => {
                             </button>
                         </div>
 
-                        <div className=" hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex={-1}>
+                        <div className=" group-focus-within:visible invisible  origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex={-1}>
                             <div className="py-1" role="none">
                                 {/* <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" --> */}
-                                <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabIndex={-1} id="menu-item-0">Account settings</a>
+                                {states.isLoading ? <div>Loading...</div> : states.isError ? <div>Error</div> : states.data.data.map(state => <MenuOptions item={state} key={state.id} />)}
 
                             </div>
                         </div>
@@ -60,7 +78,7 @@ const Filter = () => {
                     </div>
                 </div>
                 <div>
-                    <div className="relative inline-block text-left w-full">
+                    <div className="group relative inline-block text-left w-full">
                         <div>
                             <button type="button" className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-10 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="menu-button" aria-expanded="true" aria-haspopup="true">
                                 select level
@@ -72,10 +90,10 @@ const Filter = () => {
                         </div>
 
 
-                        <div className=" hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex={-1}>
+                        <div className=" group-focus-within:visible invisible  origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex={-1}>
                             <div className="py-1" role="none">
                                 {/* <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" --> */}
-                                <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabIndex={-1} id="menu-item-0">Account settings</a>
+                                {levels.isLoading ? <div>Loading...</div> : levels.isError ? <div>Error</div> : levels.data.data.map((level: { id: Key }) => <MenuOptions item={level} key={level.id} />)}
 
                             </div>
                         </div>
@@ -84,7 +102,7 @@ const Filter = () => {
                     </div>
                 </div>
                 <div>
-                    <div className="relative inline-block text-left w-full">
+                    <div className="group relative inline-block text-left w-full">
                         <div>
                             <button type="button" className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-10 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="menu-button" aria-expanded="true" aria-haspopup="true">
                                 select gender
@@ -96,10 +114,10 @@ const Filter = () => {
                         </div>
 
 
-                        <div className=" hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex={-1}>
+                        <div className=" group-focus-within:visible invisible  origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex={-1}>
                             <div className="py-1" role="none">
                                 {/* <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" --> */}
-                                <a href="#" className="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabIndex={-1} id="menu-item-0">Account settings</a>
+                                {gender.isLoading ? <div>Loading...</div> : gender.isError ? <div>Error</div> : gender.data.data.map((gender: { id: Key }) => <MenuOptions item={gender} key={gender.id} />)}
 
                             </div>
                         </div>
