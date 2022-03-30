@@ -66,7 +66,7 @@ const Filter = () => {
                             </button>
                         </div>
 
-                        <div className=" group-focus-within:visible invisible  origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex={-1}>
+                        <div className=" group-focus-within:visible invisible  origin-top-right absolute right-0 mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex={-1}>
                             <div className="py-1" role="none">
                                 {/* <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" --> */}
                                 {states.isLoading ? <div>Loading...</div> : states.isError ? <div>Error</div> : states.data.data.map(state => <MenuOptions item={state} key={state.id} />)}
@@ -90,7 +90,7 @@ const Filter = () => {
                         </div>
 
 
-                        <div className=" group-focus-within:visible invisible  origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex={-1}>
+                        <div className=" group-focus-within:visible invisible  origin-top-right absolute right-0 mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex={-1}>
                             <div className="py-1" role="none">
                                 {/* <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" --> */}
                                 {levels.isLoading ? <div>Loading...</div> : levels.isError ? <div>Error</div> : levels.data.data.map((level: { id: Key }) => <MenuOptions item={level} key={level.id} />)}
@@ -114,7 +114,7 @@ const Filter = () => {
                         </div>
 
 
-                        <div className=" group-focus-within:visible invisible  origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex={-1}>
+                        <div className=" group-focus-within:visible invisible  origin-top-right absolute right-0 mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex={-1}>
                             <div className="py-1" role="none">
                                 {/* <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" --> */}
                                 {gender.isLoading ? <div>Loading...</div> : gender.isError ? <div>Error</div> : gender.data.data.map((gender: { id: Key }) => <MenuOptions item={gender} key={gender.id} />)}
