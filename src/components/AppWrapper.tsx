@@ -28,6 +28,7 @@ const AppWrapper = () => {
         }), {
         enabled: submit
     })
+   
     console.log(filter)
     return (
         <>

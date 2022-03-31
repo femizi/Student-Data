@@ -2,7 +2,7 @@ import { isError, useQuery } from 'react-query';
 import Display from './Display';
 
 const FilteredTable = ({ data }) => {
-console.log(data.data.data.message)
+
 
 
     return (

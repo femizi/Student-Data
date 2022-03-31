@@ -6,7 +6,7 @@ const queryClient = new QueryClient()
 
 const Result = () => {
     let params = useParams()
-    console.log(params.id)
+   
     return (
         <QueryClientProvider client={queryClient}>
             <Wrapper id={params.id}/>
