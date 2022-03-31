@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ResultHeader = ({logo, profilepicture}) => {
-  return (
-    <div className='header mt-6 flex  w-screen mb-20 text-center '>
+const ResultHeader = ({ logo, profilepicture }) => {
+    return (
+        <div className='header mt-6 flex  w-screen mb-20 text-center '>
             <div className='relative'>
                 <img src={logo} alt='logo'></img>
                 <div className='font-bold text-xl bg-white p-3 rounded-full absolute top-5 right-0 z-10'>FCE</div>
@@ -14,10 +14,10 @@ const ResultHeader = ({logo, profilepicture}) => {
                 <h3 className='font-bold text-xs text-[#333333] '>Student First Semester Statement Of Result</h3>
             </div>
             <div className='-ml-5'>
-                <img  src={profilepicture} alt="picture of student" />
+                <img src={profilepicture} alt="picture of student" />
             </div>
         </div>
-  )
+    )
 }
 
 export default ResultHeader
