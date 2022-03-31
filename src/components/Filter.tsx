@@ -2,7 +2,7 @@ import { Key, useState } from "react"
 import { useQuery } from "react-query"
 import MenuOptions from './MenuOptions'
 
-const Filter = ({setSubmit, setAgeOption, setGenderOption, setLevelOption, setStateOption, ageOption, genderOption, levelOption, stateOption}) => {
+const Filter = ({setSubmit, filter, setAgeOption, setGenderOption, setLevelOption, setStateOption, ageOption, genderOption, levelOption, stateOption}) => {
  
   
     const ages = useQuery('ages', () =>
@@ -30,6 +30,7 @@ const Filter = ({setSubmit, setAgeOption, setGenderOption, setLevelOption, setSt
 function handleSubmit (e){
     e.preventDefault()
     setSubmit(true)
+    filter.refetch()
 
 }
         

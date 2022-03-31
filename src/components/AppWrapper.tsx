@@ -34,6 +34,7 @@ const AppWrapper = () => {
         <>
             <Header />
             <Filter
+            filter={filter}
                 setSubmit={setSubmit}
                 setAgeOption={setAgeOption}
                 setGenderOption={setGenderOption}
