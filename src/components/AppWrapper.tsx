@@ -28,13 +28,13 @@ const AppWrapper = () => {
         }), {
         enabled: submit
     })
-   
+
     console.log(filter)
     return (
         <>
             <Header />
             <Filter
-            filter={filter}
+                filter={filter}
                 setSubmit={setSubmit}
                 setAgeOption={setAgeOption}
                 setGenderOption={setGenderOption}
@@ -44,14 +44,14 @@ const AppWrapper = () => {
                 genderOption={genderOption}
                 levelOption={levelOption}
                 stateOption={stateOption}
-                />
-               {
-               filter.isIdle
-               ? <Table />
-               : <FilteredTable data={filter}/>
-}
+            />
+            {
+                filter.isIdle
+                    ? <Table />
+                    : <FilteredTable data={filter} />
+            }
 
-            
+
         </>
     )
 }
