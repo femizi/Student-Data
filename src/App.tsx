@@ -11,7 +11,7 @@ function App() {
  
   return (
 
-    <div className="App px-10 bg-[#E5E5E5] h-screen overflow-hidden ">
+    <div className="App px-10 bg-[#E5E5E5] h-full md:h-screen md:overflow-hidden ">
       <QueryClientProvider client={queryClient}>
 
 

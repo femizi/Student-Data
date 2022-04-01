@@ -37,7 +37,7 @@ const Filter = ({ setSubmit, filter, setAgeOption, setGenderOption, setLevelOpti
     return (
         <div className="filter-container bg-white px-7 py-8">
             <h2 className=' text-left text-[#616161] text-2xl mb-8'>Filter Student Table By:</h2>
-            <form action="" onSubmit={(e) => handleSubmit(e)} className='grid grid-cols-3  gap-11'>
+            <form action="" onSubmit={(e) => handleSubmit(e)} className='grid grid-cols-2 md:grid-cols-3  gap-11'>
                 <div>
                     <div className="group relative inline-block text-left w-full">
                         <div>

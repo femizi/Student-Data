@@ -13,13 +13,13 @@ const Table = () => {
 
   return (
     <div className="table-container my-11 bg-white overflow-y-scroll h-[400px] ">
-      <div className='grid grid-cols-8 bg-[#F9F9FA] py-4 px-7 gap-3 text-[#343434] font-bold'>
+      <div className='grid grid-cols-4 text-sm md:text-base md:grid-cols-8 bg-[#F9F9FA] py-4 px-4 md:px-7 gap-1  md:gap-3 text-[#343434] font-bold'>
         <div>S/N</div>
-        <div>Surname</div>
+        <div className='hidden md:block'>Surname</div>
         <div>FirstName</div>
-        <div>Age</div>
-        <div>Gender</div>
-        <div>Level</div>
+        <div className='hidden md:block'>Age</div>
+        <div className='hidden md:block'>Gender</div>
+        <div className='hidden md:block'>Level</div>
         <div>State</div>
         <div>Action</div></div>
 
