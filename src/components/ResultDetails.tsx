@@ -9,7 +9,7 @@ const ResultDetails = ({ data }) => {
         <div className='font-bold'>Level:</div>
         <div className='font-medium'>{data.level} level</div>
       </div>
-      <div className='ml-auto mr-24  grid gap-3 grid-cols-40/60'>
+      <div className='ml-auto md:mr-24 mr-4 grid gap-3 grid-cols-40/60'>
         <div className='font-bold' >Reg. No.:</div>
         <div className='font-medium'>{data.reg_no}</div>
         <div className='font-bold'>Session:</div>

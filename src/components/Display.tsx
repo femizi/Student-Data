@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Outlet, Link } from "react-router-dom";
 
 const Display = ({ item }) => {
@@ -11,7 +11,7 @@ const Display = ({ item }) => {
       <div className='first-letter:uppercase hidden md:block'>{item.gender}</div>
       <div className='hidden md:block'>{item.level}</div>
       <div>{item.state}</div>
-      <div className='-mt-2 bg-[#46C35F]'>
+      <div className='-mt-2 bg-[#46C35F] md:bg-transparent'>
         <Link className='bg-[#46C35F] p-1 md:py-3 md:px-2' to={`/result/${item.id}`}>
           <button className='text-sm text-white bg-[#46C35F] '>Download Result</button>
         </Link>

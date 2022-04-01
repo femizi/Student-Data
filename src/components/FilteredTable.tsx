@@ -1,4 +1,4 @@
-import { isError, useQuery } from 'react-query';
+
 import Display from './Display';
 
 const FilteredTable = ({ data }) => {
@@ -23,7 +23,7 @@ const FilteredTable = ({ data }) => {
                     data.isLoading ? <div className='text-center p-2'>Loading...</div>
                         : data.isError ? <div className='text-center p-2'>Error{data.error.message} </div>
                             : data.data.data.message !== "Successful" ? <div className='text-center p-2'>No Data</div>
-                                : data.data.data.data.students.map((item, index) => (
+                                : data.data.data.data.students.map((item) => (
 
                                     <Display key={item.id} item={item} />))
                 }
